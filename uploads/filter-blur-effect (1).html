@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Measured Filter + Progressive Bottom Blur</title>
+<style>
+  /* ============================================================
+     Effect measured pixel-for-pixel from the reference:
+       1) #grade SVG color matrix  → the exact color grade
+       2) .top-scrim               → status-bar darkening
+       3) .blur-stack              → progressive blur (σ→~16px)
+       4) .haze                    → cool light veil over the blur
+     ============================================================ */
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{
+    background:#0d0f0e; display:flex; justify-content:center;
+    align-items:center; min-height:100vh;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .hero{
+    position:relative; width:min(400px,100vw);
+    aspect-ratio: 400 / 866;   /* 19.5:9 screen */
+    overflow:hidden; border-radius:28px;
+  }
+
+  /* 1 ─ PHOTO + EXACT GRADE (fitted color matrix) */
+  .hero-img{
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover;
+    filter:url(#grade);
+  }
+
+  /* 2 ─ TOP SCRIM */
+  .top-scrim{
+    position:absolute; inset:0 0 auto 0; height:22%;
+    background:linear-gradient(to bottom, rgba(8,12,16,.30), transparent);
+    pointer-events:none;
+  }
+
+  /* 3 ─ ARC BLUR — measured: radial, centered below screen at (55%, 115%).
+     Iso-blur contours are circular arcs bulging up mid-screen; blur begins
+     ~50% height and reaches σ≈14-16px at the bottom. Radii in px assume a
+     400x866 hero; scale them proportionally if your hero size differs. */
+  .blur-stack{
+    position:absolute; inset:0;
+    pointer-events:none;
+  }
+  .blur-stack > div{ position:absolute; inset:0; }
+  .b1{ backdrop-filter:blur(1px); -webkit-backdrop-filter:blur(1px);
+       mask:radial-gradient(circle at 55% 115%, black 480px, transparent 545px);
+       -webkit-mask:radial-gradient(circle at 55% 115%, black 480px, transparent 545px);}
+  .b2{ backdrop-filter:blur(1.5px); -webkit-backdrop-filter:blur(1.5px);
+       mask:radial-gradient(circle at 55% 115%, black 440px, transparent 505px);
+       -webkit-mask:radial-gradient(circle at 55% 115%, black 440px, transparent 505px);}
+  .b3{ backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px);
+       mask:radial-gradient(circle at 55% 115%, black 390px, transparent 455px);
+       -webkit-mask:radial-gradient(circle at 55% 115%, black 390px, transparent 455px);}
+  .b4{ backdrop-filter:blur(5px); -webkit-backdrop-filter:blur(5px);
+       mask:radial-gradient(circle at 55% 115%, black 320px, transparent 395px);
+       -webkit-mask:radial-gradient(circle at 55% 115%, black 320px, transparent 395px);}
+  .b5{ backdrop-filter:blur(7px); -webkit-backdrop-filter:blur(7px);
+       mask:radial-gradient(circle at 55% 115%, black 240px, transparent 325px);
+       -webkit-mask:radial-gradient(circle at 55% 115%, black 240px, transparent 325px);}
+  .b6{ backdrop-filter:blur(9px); -webkit-backdrop-filter:blur(9px);
+       mask:radial-gradient(circle at 55% 115%, black 130px, transparent 235px);
+       -webkit-mask:radial-gradient(circle at 55% 115%, black 130px, transparent 235px);}
+
+  /* 4 ─ MEASURED GLOW — teal-cyan from the bottom, tilted (stronger right),
+     with a cool navy shadow low-left. This is the "color of the blur". */
+  .haze{
+    position:absolute; inset:0; pointer-events:none;
+    background:
+      /* main teal-cyan bottom glow */
+      linear-gradient(to top,
+        rgba(110,160,195,0.30) 0%,
+        rgba(110,160,195,0.19) 7%,
+        rgba(112,160,192,0.07) 16%,
+        transparent 34%),
+      /* right-side brighter lift over the blur zone */
+      linear-gradient(285deg,
+        rgba(240,225,205,0.18) 0%,
+        rgba(240,225,205,0.09) 24%,
+        transparent 48%),
+      /* cool navy shadow, lower-left */
+      radial-gradient(ellipse 60% 30% at 0% 76%,
+        rgba(5,25,75,0.20), transparent 70%);
+  }
+
+  /* ---- rough placeholders only, replace with your elements ---- */
+  .content{
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    justify-content:space-between; padding:56px 24px 30px; color:#fff;
+  }
+  .content h1{ text-align:center; text-transform:uppercase;
+    font-size:2rem; line-height:1.05; }
+  .meta{ display:flex; gap:48px; margin-bottom:14px; }
+  .meta small{ display:block; opacity:.75; font-size:.7rem; margin-bottom:4px; }
+  .meta strong{ font-size:1.05rem; }
+  .content p{ font-size:.85rem; line-height:1.45; opacity:.92; max-width:34ch; }
+</style>
+</head>
+<body>
+
+<!-- Exact fitted color grade. color-interpolation-filters="sRGB" is REQUIRED -->
+<svg width="0" height="0" style="position:absolute">
+  <filter id="grade" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values="
+       0.6666 -0.0742  0.0785 0 0.1499
+      -0.0627  0.7320  0.0649 0 0.0943
+      -0.0701  0.1109  0.7276 0 0.0471
+       0       0       0      1 0"/>
+  </filter>
+</svg>
+
+<div class="hero">
+  <img class="hero-img" src="bg.png" alt="">
+  <div class="top-scrim"></div>
+  <div class="blur-stack">
+    <div class="b1"></div><div class="b2"></div><div class="b3"></div>
+    <div class="b4"></div><div class="b5"></div><div class="b6"></div>
+  </div>
+  <div class="haze"></div>
+  <div class="content">
+    <h1>Sample Title<br>Goes Here</h1>
+    <div>
+      <div class="meta">
+        <div><small>Label</small><strong>8 GUESTS</strong></div>
+        <div><small>Label</small><strong>12 DAYS</strong></div>
+      </div>
+      <p>Placeholder paragraph sitting inside the blurred zone to judge legibility.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

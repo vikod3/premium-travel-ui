@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Comenia Sans';
+    src: url('ComeniaSans-Bold.eot');
+    src: local('Comenia Sans Bold'), local('ComeniaSans-Bold'),
+        url('ComeniaSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('ComeniaSans-Bold.woff2') format('woff2'),
+        url('ComeniaSans-Bold.woff') format('woff'),
+        url('ComeniaSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comenia Sans Cond';
+    src: url('ComeniaSansCond.eot');
+    src: local('Comenia Sans Cond'), local('ComeniaSansCond'),
+        url('ComeniaSansCond.eot?#iefix') format('embedded-opentype'),
+        url('ComeniaSansCond.woff2') format('woff2'),
+        url('ComeniaSansCond.woff') format('woff'),
+        url('ComeniaSansCond.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comenia Sans Cond';
+    src: url('ComeniaSansCond-BoldItalic.eot');
+    src: local('Comenia Sans Cond Bold Italic'), local('ComeniaSansCond-BoldItalic'),
+        url('ComeniaSansCond-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ComeniaSansCond-BoldItalic.woff2') format('woff2'),
+        url('ComeniaSansCond-BoldItalic.woff') format('woff'),
+        url('ComeniaSansCond-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Comenia Sans Cond';
+    src: url('ComeniaSansCondMedium.eot');
+    src: local('Comenia Sans Cond Medium'), local('ComeniaSansCondMedium'),
+        url('ComeniaSansCondMedium.eot?#iefix') format('embedded-opentype'),
+        url('ComeniaSansCondMedium.woff2') format('woff2'),
+        url('ComeniaSansCondMedium.woff') format('woff'),
+        url('ComeniaSansCondMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comenia Sans';
+    src: url('ComeniaSans-Italic.eot');
+    src: local('Comenia Sans Italic'), local('ComeniaSans-Italic'),
+        url('ComeniaSans-Italic.eot?#iefix') format('embedded-opentype'),
+        url('ComeniaSans-Italic.woff2') format('woff2'),
+        url('ComeniaSans-Italic.woff') format('woff'),
+        url('ComeniaSans-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Comenia Sans';
+    src: url('ComeniaSansMedium-Italic.eot');
+    src: local('Comenia Sans Medium Italic'), local('ComeniaSansMedium-Italic'),
+        url('ComeniaSansMedium-Italic.eot?#iefix') format('embedded-opentype'),
+        url('ComeniaSansMedium-Italic.woff2') format('woff2'),
+        url('ComeniaSansMedium-Italic.woff') format('woff'),
+        url('ComeniaSansMedium-Italic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Comenia Sans Cond';
+    src: url('ComeniaSansCond-Italic.eot');
+    src: local('Comenia Sans Cond Italic'), local('ComeniaSansCond-Italic'),
+        url('ComeniaSansCond-Italic.eot?#iefix') format('embedded-opentype'),
+        url('ComeniaSansCond-Italic.woff2') format('woff2'),
+        url('ComeniaSansCond-Italic.woff') format('woff'),
+        url('ComeniaSansCond-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Comenia Sans Cond';
+    src: url('ComeniaSansCondMedium-Italic.eot');
+    src: local('Comenia Sans Cond Medium Italic'), local('ComeniaSansCondMedium-Italic'),
+        url('ComeniaSansCondMedium-Italic.eot?#iefix') format('embedded-opentype'),
+        url('ComeniaSansCondMedium-Italic.woff2') format('woff2'),
+        url('ComeniaSansCondMedium-Italic.woff') format('woff'),
+        url('ComeniaSansCondMedium-Italic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Comenia Sans';
+    src: url('ComeniaSansMedium.eot');
+    src: local('Comenia Sans Medium'), local('ComeniaSansMedium'),
+        url('ComeniaSansMedium.eot?#iefix') format('embedded-opentype'),
+        url('ComeniaSansMedium.woff2') format('woff2'),
+        url('ComeniaSansMedium.woff') format('woff'),
+        url('ComeniaSansMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comenia Sans Cond';
+    src: url('ComeniaSansCond-Bold.eot');
+    src: local('Comenia Sans Cond Bold'), local('ComeniaSansCond-Bold'),
+        url('ComeniaSansCond-Bold.eot?#iefix') format('embedded-opentype'),
+        url('ComeniaSansCond-Bold.woff2') format('woff2'),
+        url('ComeniaSansCond-Bold.woff') format('woff'),
+        url('ComeniaSansCond-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comenia Sans';
+    src: url('ComeniaSans.eot');
+    src: local('Comenia Sans'), local('ComeniaSans'),
+        url('ComeniaSans.eot?#iefix') format('embedded-opentype'),
+        url('ComeniaSans.woff2') format('woff2'),
+        url('ComeniaSans.woff') format('woff'),
+        url('ComeniaSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comenia Sans';
+    src: url('ComeniaSans-BoldItalic.eot');
+    src: local('Comenia Sans Bold Italic'), local('ComeniaSans-BoldItalic'),
+        url('ComeniaSans-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ComeniaSans-BoldItalic.woff2') format('woff2'),
+        url('ComeniaSans-BoldItalic.woff') format('woff'),
+        url('ComeniaSans-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+

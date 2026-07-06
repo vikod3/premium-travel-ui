@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #BEE7EC; }
+    @font-face {
+      font-family: 'Dilemma Sans Black CD';
+      src: url('./fonts/dilemma-sans-black-cd.otf') format('opentype');
+      font-weight: 900;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Comenia Sans';
+      src: url('./fonts/ComeniaSans-Bold.woff2') format('woff2'),
+           url('./fonts/ComeniaSans-Bold.woff') format('woff');
+      font-weight: bold;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Comenia Sans';
+      src: url('./fonts/ComeniaSansMedium.woff2') format('woff2'),
+           url('./fonts/ComeniaSansMedium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Comenia Sans';
+      src: url('./fonts/ComeniaSans.woff2') format('woff2'),
+           url('./fonts/ComeniaSans.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Linotype Projekt';
+      src: url('./fonts/linotype-projekt-regular.woff2') format('woff2'),
+           url('./fonts/linotype-projekt-regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+</helmet>
+
+<div style="min-height: 100vh; position: relative; overflow: hidden; background: linear-gradient(175deg, #A8E4EC 0%, #BFE3E9 40%, #CDD3E6 100%); display: flex; align-items: center; justify-content: center; padding: 90px 60px; box-sizing: border-box;">
+
+  <div style="position: absolute; top: -40px; left: 50%; transform: translateX(-50%); font-family: 'Anton', sans-serif; font-size: 260px; letter-spacing: 6px; color: rgba(255,255,255,0.28); white-space: nowrap; pointer-events: none; user-select: none;">ZENITH ESCAPES</div>
+
+  <div data-screen-label="Offer teaser" style="position: relative;">
+    <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" width="{{ 370 }}" height="{{ 790 }}" time="11:11" hint-size="370px,790px">
+      <div style="height: 100%; display: flex; flex-direction: column; background: #f4f4f4; box-sizing: border-box; padding: 66px 14px 14px;">
+        <div style="font-family: 'Dilemma Sans Black CD', 'Anton', sans-serif; font-size: 69px; font-weight: 900; line-height: 0.94; letter-spacing: 0.5px; color: #2c2c2c; text-align: center; text-transform: uppercase; padding: 10px 6px 22px;">Experience<br>Unparalleled<br>Luxury</div>
+
+        <div style="flex: 1; position: relative; border-radius: 26px; overflow: hidden; min-height: 0; margin: 0 8px;">
+          <img src="./images/bali-rice-field.png" alt="Bali palm jungle" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.84) contrast(1.05);">
+          <img src="./images/bali-rice-field.png" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(16px) saturate(1.15); transform: scale(1.08); -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 48%, rgba(0,0,0,0.35) 62%, rgba(0,0,0,0.85) 78%, rgba(0,0,0,1) 92%); mask-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 48%, rgba(0,0,0,0.35) 62%, rgba(0,0,0,0.85) 78%, rgba(0,0,0,1) 92%);">
+          <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; background: rgba(122,107,82,0.21);"></div>
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(40,70,35,0) 0%, rgba(40,70,35,0) 42%, rgba(45,80,40,0.18) 60%, rgba(35,65,32,0.4) 78%, rgba(28,52,26,0.55) 100%);"></div>
+
+          <sc-if value="{{ showSparkles }}" hint-placeholder-val="{{ true }}">
+            <svg width="22" height="22" viewBox="0 0 1024 1024" style="position: absolute; top: 20px; left: 20px;">
+              <path d="M87 116C260 108 408 168 512 300C616 168 764 108 937 116C945 289 885 437 753 541C885 645 945 793 937 966C764 974 616 914 512 782C408 914 260 974 87 966C79 793 139 645 271 541C139 437 79 289 87 116Z" fill="#fff"></path>
+            </svg>
+          </sc-if>
+
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 10px;">
+            <div style="font-family: 'Comenia Sans', Helvetica, Arial, sans-serif; font-size: 34px; font-weight: 500; line-height: 1.12; color: #fff; letter-spacing: -0.2px;">Bali Exclusive<br>Luxury Getaway</div>
+            <div style="font-family: Helvetica, Arial, sans-serif; font-size: 13.5px; line-height: 1.45; color: rgba(255,255,255,0.88); max-width: 250px;">Breathtaking locations, bespoke services, with a focus on exclusivity</div>
+            <div style="display: flex;">
+              <div style="display: inline-flex; align-items: center; gap: 7px; background: linear-gradient(90deg, #FAD5D7 0%, #FAD5D7 38%, #FFFFFF 50%, #9CE2F9 62%, #9CE2F9 100%); border-radius: 999px; padding: 7px 7px 7px 14px; box-shadow: 0 6px 18px rgba(0,0,0,0.25);">
+                <span style="font-family: Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 750; letter-spacing: 0.6px; color: #1a1a2e;">VIEW OFFER</span>
+                <span style="width: 21px; height: 21px; display: flex; align-items: center; justify-content: center;">
+                  <svg width="12.5" height="12.5" viewBox="0 0 24 24" fill="none">
+                    <path d="M1 12C1 12 5 5 12 5C19 5 23 12 23 12C23 12 19 19 12 19C5 19 1 12 1 12Z" stroke="#1a1a2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <circle cx="12" cy="12" r="3" stroke="#1a1a2e" stroke-width="2"></circle>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </x-import>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: &quot;560px&quot;, &quot;height&quot;: &quot;1000px&quot;},
+  &quot;showSparkles&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Decoration&quot;}
+}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showSparkles: this.props.showSparkles ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>

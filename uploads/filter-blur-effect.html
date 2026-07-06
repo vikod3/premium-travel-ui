@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Measured Filter + Progressive Bottom Blur</title>
+<style>
+  /* ============================================================
+     Effect measured pixel-for-pixel from the reference:
+       1) #grade SVG color matrix  → the exact color grade
+       2) .top-scrim               → status-bar darkening
+       3) .blur-stack              → progressive blur (σ→~16px)
+       4) .haze                    → cool light veil over the blur
+     ============================================================ */
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{
+    background:#0d0f0e; display:flex; justify-content:center;
+    align-items:center; min-height:100vh;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .hero{
+    position:relative; width:min(400px,100vw);
+    aspect-ratio: 400 / 866;   /* 19.5:9 screen */
+    overflow:hidden; border-radius:28px;
+  }
+
+  /* 1 ─ PHOTO + EXACT GRADE (fitted color matrix) */
+  .hero-img{
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover;
+    filter:url(#grade);
+  }
+
+  /* 2 ─ TOP SCRIM */
+  .top-scrim{
+    position:absolute; inset:0 0 auto 0; height:22%;
+    background:linear-gradient(to bottom, rgba(8,12,16,.30), transparent);
+    pointer-events:none;
+  }
+
+  /* 3 ─ PROGRESSIVE BLUR — measured ramp: starts ~66%, σ≈16px at bottom */
+  .blur-stack{
+    position:absolute; left:0; right:0; bottom:0; height:40%;
+    pointer-events:none;
+  }
+  .blur-stack > div{ position:absolute; inset:0; }
+  .b1{ backdrop-filter:blur(1px); -webkit-backdrop-filter:blur(1px);
+       mask:linear-gradient(to bottom,transparent 4%,black 16%,black 100%);
+       -webkit-mask:linear-gradient(to bottom,transparent 4%,black 16%,black 100%);}
+  .b2{ backdrop-filter:blur(2px); -webkit-backdrop-filter:blur(2px);
+       mask:linear-gradient(to bottom,transparent 12%,black 26%,black 100%);
+       -webkit-mask:linear-gradient(to bottom,transparent 12%,black 26%,black 100%);}
+  .b3{ backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+       mask:linear-gradient(to bottom,transparent 24%,black 40%,black 100%);
+       -webkit-mask:linear-gradient(to bottom,transparent 24%,black 40%,black 100%);}
+  .b4{ backdrop-filter:blur(7px); -webkit-backdrop-filter:blur(7px);
+       mask:linear-gradient(to bottom,transparent 38%,black 54%,black 100%);
+       -webkit-mask:linear-gradient(to bottom,transparent 38%,black 54%,black 100%);}
+  .b5{ backdrop-filter:blur(11px); -webkit-backdrop-filter:blur(11px);
+       mask:linear-gradient(to bottom,transparent 52%,black 68%,black 100%);
+       -webkit-mask:linear-gradient(to bottom,transparent 52%,black 68%,black 100%);}
+  .b6{ backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+       mask:linear-gradient(to bottom,transparent 66%,black 84%,black 100%);
+       -webkit-mask:linear-gradient(to bottom,transparent 66%,black 84%,black 100%);}
+
+  /* 4 ─ MEASURED HAZE — light blue-gray veil, alpha 0 → ~0.42 */
+  .haze{
+    position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(to bottom,
+      transparent 67%,
+      rgba(146,148,168,0.06) 72%,
+      rgba(146,148,168,0.13) 79%,
+      rgba(150,146,164,0.19) 83%,
+      rgba(148,150,168,0.25) 88%,
+      rgba(140,152,170,0.27) 100%);
+  }
+
+  /* ---- rough placeholders only, replace with your elements ---- */
+  .content{
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    justify-content:space-between; padding:56px 24px 30px; color:#fff;
+  }
+  .content h1{ text-align:center; text-transform:uppercase;
+    font-size:2rem; line-height:1.05; }
+  .meta{ display:flex; gap:48px; margin-bottom:14px; }
+  .meta small{ display:block; opacity:.75; font-size:.7rem; margin-bottom:4px; }
+  .meta strong{ font-size:1.05rem; }
+  .content p{ font-size:.85rem; line-height:1.45; opacity:.92; max-width:34ch; }
+</style>
+</head>
+<body>
+
+<!-- Exact fitted color grade. color-interpolation-filters="sRGB" is REQUIRED -->
+<svg width="0" height="0" style="position:absolute">
+  <filter id="grade" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values="
+       0.6666 -0.0742  0.0785 0 0.1499
+      -0.0627  0.7320  0.0649 0 0.0943
+      -0.0701  0.1109  0.7276 0 0.0471
+       0       0       0      1 0"/>
+  </filter>
+</svg>
+
+<div class="hero">
+  <img class="hero-img" src="bg.png" alt="">
+  <div class="top-scrim"></div>
+  <div class="blur-stack">
+    <div class="b1"></div><div class="b2"></div><div class="b3"></div>
+    <div class="b4"></div><div class="b5"></div><div class="b6"></div>
+  </div>
+  <div class="haze"></div>
+  <div class="content">
+    <h1>Sample Title<br>Goes Here</h1>
+    <div>
+      <div class="meta">
+        <div><small>Label</small><strong>8 GUESTS</strong></div>
+        <div><small>Label</small><strong>12 DAYS</strong></div>
+      </div>
+      <p>Placeholder paragraph sitting inside the blurred zone to judge legibility.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
