@@ -9,7 +9,7 @@ export default function OfferTeaser() {
         <div style={{ height: '100%', display: 'flex', flexDirection: 'column', background: '#f4f4f4', boxSizing: 'border-box', padding: '66px 14px 14px' }}>
           <div
             style={{
-              fontFamily: "'Dilemma Sans Black CD', 'Anton', sans-serif",
+              fontFamily: "'Anton', sans-serif",
               fontSize: 69,
               fontWeight: 900,
               lineHeight: 0.94,

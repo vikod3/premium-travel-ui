@@ -1,12 +1,3 @@
-@font-face {
-  font-family: 'Dilemma Sans Black CD';
-  src: url('/fonts/Dilemma-SerifBlackCD.woff2') format('woff2'),
-       url('/fonts/Dilemma-SerifBlackCD.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
-}
-
-
 html, body {
   margin: 0;
   height: 100%;

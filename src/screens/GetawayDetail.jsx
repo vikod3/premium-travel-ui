@@ -65,7 +65,7 @@ export default function GetawayDetail() {
             <div style={{ textAlign: 'center', marginTop: 46 }}>
               <div
                 style={{
-                  fontFamily: "'Dilemma Sans Black CD', 'Anton', sans-serif",
+                  fontFamily: "'Anton', sans-serif",
                   fontSize: 52,
                   fontWeight: 900,
                   lineHeight: 1.0,
@@ -84,7 +84,7 @@ export default function GetawayDetail() {
               </div>
               <div style={{ marginTop: 8, display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: 5, animation: 'zeFadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.70s both' }}>
                 <span style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.85)' }}>by</span>
-                <span style={{ fontFamily: "'Dilemma Sans Black CD', 'Anton', sans-serif", fontWeight: 900, fontSize: 22, letterSpacing: 1, color: '#fff' }}>ZENITH ESCAPES</span>
+                <span style={{ fontFamily: "'Anton', sans-serif", fontWeight: 900, fontSize: 22, letterSpacing: 1, color: '#fff' }}>ZENITH ESCAPES</span>
               </div>
             </div>
 
@@ -103,11 +103,11 @@ export default function GetawayDetail() {
               <div style={{ display: 'grid', gridTemplateColumns: 'auto auto', justifyContent: 'start', gap: 12 }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 6, animation: 'zeFadeUp 0.85s cubic-bezier(0.22,1,0.36,1) 0.85s both' }}>
                   <span style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.75)' }}>Exclusive</span>
-                  <span style={{ fontFamily: "'Dilemma Sans Black CD', 'Anton', sans-serif", fontSize: 33, letterSpacing: 0.5, color: '#fff' }}>8 GUESTS</span>
+                  <span style={{ fontFamily: "'Anton', sans-serif", fontSize: 33, letterSpacing: 0.5, color: '#fff' }}>8 GUESTS</span>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginLeft: 48, animation: 'zeFadeUp 0.85s cubic-bezier(0.22,1,0.36,1) 0.98s both' }}>
                   <span style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.75)' }}>Availability</span>
-                  <span style={{ fontFamily: "'Dilemma Sans Black CD', 'Anton', sans-serif", fontSize: 33, letterSpacing: 0.5, color: '#fff' }}>12 DAYS</span>
+                  <span style={{ fontFamily: "'Anton', sans-serif", fontSize: 33, letterSpacing: 0.5, color: '#fff' }}>12 DAYS</span>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 16 }}>
