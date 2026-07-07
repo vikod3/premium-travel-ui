@@ -1,6 +1,6 @@
 import { IOSDevice } from '../components/IOSDevice';
 
-const poolsideImg = '/images/bali-poolside-palms.png';
+const poolsideVideo = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260707_004833_4cc93fa3-27f5-4cec-b1b2-0b4fb073c13a.mp4';
 
 export default function GetawayDetail() {
   return (
@@ -16,9 +16,12 @@ export default function GetawayDetail() {
 
       <IOSDevice dark>
         <div style={{ height: '100%', position: 'relative', overflow: 'hidden' }}>
-          <img
-            src={poolsideImg}
-            alt="Golden palms at the beach"
+          <video
+            src={poolsideVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
             style={{
               position: 'absolute',
               inset: 0,

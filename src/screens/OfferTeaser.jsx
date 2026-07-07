@@ -1,6 +1,6 @@
 import { IOSDevice } from '../components/IOSDevice';
 
-const riceFieldImg = '/images/bali-rice-field.png';
+const riceFieldVideo = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260707_004919_5e1b7e08-d723-4ecb-8afe-d613d730984c.mp4';
 
 export default function OfferTeaser() {
   return (
@@ -42,14 +42,20 @@ export default function OfferTeaser() {
               animation: 'zeCardReveal 1.1s cubic-bezier(0.22,1,0.36,1) 0.45s both',
             }}
           >
-            <img
-              src={riceFieldImg}
-              alt="Bali palm jungle"
+            <video
+              src={riceFieldVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
               style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(0.84) contrast(1.05)' }}
             />
-            <img
-              src={riceFieldImg}
-              alt=""
+            <video
+              src={riceFieldVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
               aria-hidden="true"
               style={{
                 position: 'absolute',
