@@ -5,36 +5,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Comenia Sans';
-  src: url('/fonts/ComeniaSans-Bold.woff2') format('woff2'),
-       url('/fonts/ComeniaSans-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Comenia Sans';
-  src: url('/fonts/ComeniaSansMedium.woff2') format('woff2'),
-       url('/fonts/ComeniaSansMedium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Comenia Sans';
-  src: url('/fonts/ComeniaSans.woff2') format('woff2'),
-       url('/fonts/ComeniaSans.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Roswell Three ITC';
-  src: url('/fonts/Roswell-Three-ITC-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 html, body {
   margin: 0;

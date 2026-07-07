@@ -103,11 +103,11 @@ export default function GetawayDetail() {
               <div style={{ display: 'grid', gridTemplateColumns: 'auto auto', justifyContent: 'start', gap: 12 }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 6, animation: 'zeFadeUp 0.85s cubic-bezier(0.22,1,0.36,1) 0.85s both' }}>
                   <span style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.75)' }}>Exclusive</span>
-                  <span style={{ fontFamily: "'Roswell Three ITC', sans-serif", fontSize: 33, letterSpacing: 0.5, color: '#fff' }}>8 GUESTS</span>
+                  <span style={{ fontFamily: "'Dilemma Sans Black CD', 'Anton', sans-serif", fontSize: 33, letterSpacing: 0.5, color: '#fff' }}>8 GUESTS</span>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginLeft: 48, animation: 'zeFadeUp 0.85s cubic-bezier(0.22,1,0.36,1) 0.98s both' }}>
                   <span style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.75)' }}>Availability</span>
-                  <span style={{ fontFamily: "'Roswell Three ITC', sans-serif", fontSize: 33, letterSpacing: 0.5, color: '#fff' }}>12 DAYS</span>
+                  <span style={{ fontFamily: "'Dilemma Sans Black CD', 'Anton', sans-serif", fontSize: 33, letterSpacing: 0.5, color: '#fff' }}>12 DAYS</span>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 16 }}>

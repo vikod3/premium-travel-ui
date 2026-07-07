@@ -78,7 +78,7 @@ export default function OfferTeaser() {
             <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: '22px 22px 24px', display: 'flex', flexDirection: 'column', gap: 10 }}>
               <div
                 style={{
-                  fontFamily: "'Comenia Sans', Helvetica, Arial, sans-serif",
+                  fontFamily: "Helvetica, Arial, sans-serif",
                   fontSize: 34,
                   fontWeight: 500,
                   lineHeight: 1.12,
